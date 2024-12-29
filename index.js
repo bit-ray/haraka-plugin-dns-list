@@ -210,7 +210,7 @@ exports.lookup = async function (ip, zone) {
 
   try {
     const query = ipQuery(ip, zone)
-    const a = await dns.resolve4(query, 'A')
+    const a = await dns.resolve4(query)
     // console.log(`lookup ${query} -> a: ${a}`)
 
     this.stats_incr_zone(null, zone, start) // Statistics
